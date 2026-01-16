@@ -7,19 +7,52 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Middleware
-app.use(cors());
+// Allow multiple origins for CORS (local development and deployed sites)
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://lead-capture-backend-uc9v.onrender.com',
+  process.env.FRONTEND_URL
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Check if the origin is in the allowed list or matches Netlify pattern
+    if (allowedOrigins.includes(origin) || origin.includes('netlify.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // MongoDB Connection
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/lead-capture';
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+console.log('Connecting to MongoDB...');
+mongoose.connect(MONGO_URI)
+.then(() => {
+  console.log('✓ MongoDB connected successfully');
+  console.log('✓ Database:', mongoose.connection.name);
 })
-.then(() => console.log('✓ MongoDB connected successfully'))
-.catch(err => console.error('✗ MongoDB connection error:', err));
+.catch(err => {
+  console.error('✗ MongoDB connection error:', err.message);
+  console.error('✗ Please check your MONGO_URI in the .env file');
+});
+
+// MongoDB connection event handlers
+mongoose.connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('MongoDB disconnected');
+});
 
 // Lead Schema
 const leadSchema = new mongoose.Schema({

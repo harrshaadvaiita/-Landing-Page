@@ -44,7 +44,7 @@ function LandingPage() {
     setMessage('');
 
     try {
-      const API_URL = process.env.REACT_APP_API_URL || 'https://lead-capture-backend-uc9v.onrender.co';
+      const API_URL = process.env.REACT_APP_API_URL || 'https://lead-capture-backend-uc9v.onrender.com';
       const response = await axios.post(
         `${API_URL}/api/leads`,
         formData,

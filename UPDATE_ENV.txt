@@ -1,0 +1,19 @@
+# After you get MongoDB connection string from Atlas:
+
+# 1. Copy your connection string (looks like):
+# mongodb+srv://admin:password@cluster0.xxxxx.mongodb.net/lead-capture?retryWrites=true&w=majority
+
+# 2. Update the .env file with your connection string
+
+# 3. Restart backend server (Ctrl+C then: npm start)
+
+# 4. Test the form - it should now work!
+
+# QUICK TEST:
+# Open Terminal and run:
+# curl http://localhost:5000/api/health
+
+# Expected response:
+# {"message":"Backend is running"}
+
+# Then test the form at http://localhost:3000

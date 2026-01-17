@@ -506,19 +506,19 @@ function LandingPage() {
               <h3>🌟 Nirvista</h3>
               <p>Empowering businesses through innovative solutions and strategic guidance. We help entrepreneurs transform their visions into successful ventures.</p>
               <div className="footer-social">
-                <a href="#" className="social-link">📧 Email</a>
-                <a href="#" className="social-link">💼 LinkedIn</a>
-                <a href="#" className="social-link">🐦 Twitter</a>
+                <button type="button" className="social-link">📧 Email</button>
+                <button type="button" className="social-link">💼 LinkedIn</button>
+                <button type="button" className="social-link">🐦 Twitter</button>
               </div>
             </div>
             <div className="footer-column">
               <h4>Quick Links</h4>
               <ul className="footer-links">
-                <li><a href="#" onClick={() => scrollToSection('home')}>Home</a></li>
-                <li><a href="#" onClick={() => scrollToSection('about')}>About Us</a></li>
-                <li><a href="#" onClick={() => scrollToSection('tech')}>Technologies</a></li>
-                <li><a href="#" onClick={() => scrollToSection('blogs')}>Blogs</a></li>
-                <li><a href="#" onClick={() => scrollToSection('contact')}>Contact</a></li>
+                <li><button type="button" onClick={() => scrollToSection('home')}>Home</button></li>
+                <li><button type="button" onClick={() => scrollToSection('about')}>About Us</button></li>
+                <li><button type="button" onClick={() => scrollToSection('tech')}>Technologies</button></li>
+                <li><button type="button" onClick={() => scrollToSection('blogs')}>Blogs</button></li>
+                <li><button type="button" onClick={() => scrollToSection('contact')}>Contact</button></li>
               </ul>
             </div>
             <div className="footer-column">

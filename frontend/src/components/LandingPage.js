@@ -506,19 +506,19 @@ function LandingPage() {
               <h3>🌟 Nirvista</h3>
               <p>Empowering businesses through innovative solutions and strategic guidance. We help entrepreneurs transform their visions into successful ventures.</p>
               <div className="footer-social">
-                <a href="#" className="social-link">📧 Email</a>
-                <a href="#" className="social-link">💼 LinkedIn</a>
-                <a href="#" className="social-link">🐦 Twitter</a>
+                <a href="mailto:info@nirvista.com" className="social-link">📧 Email</a>
+                <a href="https://linkedin.com/company/nirvista" className="social-link">💼 LinkedIn</a>
+                <a href="https://twitter.com/nirvista" className="social-link">🐦 Twitter</a>
               </div>
             </div>
             <div className="footer-column">
               <h4>Quick Links</h4>
               <ul className="footer-links">
-                <li><a href="#" onClick={() => scrollToSection('home')}>Home</a></li>
-                <li><a href="#" onClick={() => scrollToSection('about')}>About Us</a></li>
-                <li><a href="#" onClick={() => scrollToSection('tech')}>Technologies</a></li>
-                <li><a href="#" onClick={() => scrollToSection('blogs')}>Blogs</a></li>
-                <li><a href="#" onClick={() => scrollToSection('contact')}>Contact</a></li>
+                <li><button type="button" className="footer-link-button" onClick={() => scrollToSection('home')}>Home</button></li>
+                <li><button type="button" className="footer-link-button" onClick={() => scrollToSection('about')}>About Us</button></li>
+                <li><button type="button" className="footer-link-button" onClick={() => scrollToSection('tech')}>Technologies</button></li>
+                <li><button type="button" className="footer-link-button" onClick={() => scrollToSection('blogs')}>Blogs</button></li>
+                <li><button type="button" className="footer-link-button" onClick={() => scrollToSection('contact')}>Contact</button></li>
               </ul>
             </div>
             <div className="footer-column">

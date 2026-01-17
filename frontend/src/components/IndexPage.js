@@ -118,11 +118,10 @@ function IndexPage() {
                 <span className="blog-category">Growth</span>
                 <h3>5 Strategies for Scaling Your Startup</h3>
                 <p>Learn how to scale your business efficiently without compromising quality or customer satisfaction.</p>
-                <a href="#" className="read-more" onClick={(e) => {
-                  e.preventDefault();
+                <button type="button" className="read-more" onClick={() => {
                   // This would navigate to blog post in a real app
                   alert('Blog post would open here');
-                }}>Read More →</a>
+                }}>Read More →</button>
               </div>
             </div>
             <div className="blog-card">
@@ -131,11 +130,10 @@ function IndexPage() {
                 <span className="blog-category">Innovation</span>
                 <h3>The Future of Business Automation</h3>
                 <p>Discover how automation can transform your business operations and increase productivity.</p>
-                <a href="#" className="read-more" onClick={(e) => {
-                  e.preventDefault();
+                <button type="button" className="read-more" onClick={() => {
                   // This would navigate to blog post in a real app
                   alert('Blog post would open here');
-                }}>Read More →</a>
+                }}>Read More →</button>
               </div>
             </div>
             <div className="blog-card">
@@ -144,11 +142,10 @@ function IndexPage() {
                 <span className="blog-category">Marketing</span>
                 <h3>Effective Digital Marketing Strategies</h3>
                 <p>Master the art of digital marketing to reach your target audience and drive conversions.</p>
-                <a href="#" className="read-more" onClick={(e) => {
-                  e.preventDefault();
+                <button type="button" className="read-more" onClick={() => {
                   // This would navigate to blog post in a real app
                   alert('Blog post would open here');
-                }}>Read More →</a>
+                }}>Read More →</button>
               </div>
             </div>
           </div>
@@ -201,18 +198,26 @@ function IndexPage() {
             <div className="footer-section">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><button type="button" className="footer-link" onClick={() => {
+                  document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+                }}>About Us</button></li>
+                <li><button type="button" className="footer-link" onClick={() => {
+                  document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+                }}>Our Services</button></li>
+                <li><button type="button" className="footer-link" onClick={() => {
+                  document.querySelector('#blog').scrollIntoView({ behavior: 'smooth' });
+                }}>Blog</button></li>
+                <li><button type="button" className="footer-link" onClick={() => {
+                  document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                }}>Contact</button></li>
               </ul>
             </div>
             <div className="footer-section">
               <h4>Connect</h4>
               <div className="social-links">
-                <a href="#" className="social-link">LinkedIn</a>
-                <a href="#" className="social-link">Twitter</a>
-                <a href="#" className="social-link">Facebook</a>
+                <a href="https://linkedin.com/company/nirvista" className="social-link">LinkedIn</a>
+                <a href="https://twitter.com/nirvista" className="social-link">Twitter</a>
+                <a href="https://facebook.com/nirvista" className="social-link">Facebook</a>
               </div>
             </div>
           </div>

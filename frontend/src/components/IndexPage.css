@@ -352,11 +352,41 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .read-more:hover {
   color: #764ba2;
   padding-left: 5px;
+}
+
+.footer-link {
+  background: transparent;
+  border: none;
+  color: #bdc3c7;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.footer-link:hover {
+  color: #667eea;
+  padding-left: 5px;
+  background: transparent;
+}
+
+.footer-link:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  color: #667eea;
 }
 
 /* Contact Section */
